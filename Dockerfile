@@ -42,3 +42,5 @@ COPY .vimrc /root/.vimrc
 COPY docker-entrypoint.sh /bin/docker-entrypoint.sh
 RUN chmod +x /bin/docker-entrypoint.sh
 ENTRYPOINT ["/bin/docker-entrypoint.sh"]
+
+WORKDIR /root/home/turtleshell
