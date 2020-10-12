@@ -25,12 +25,12 @@ RUN curl -L https://github.com/fmtlib/fmt/archive/7.0.3.tar.gz -o fmt_latest.tar
 RUN mkdir -p /usr/include/nlohmann && cd /usr/include/nlohmann && \
     curl -L https://github.com/nlohmann/json/releases/download/v3.9.1/json.hpp -o json.hpp
 
-RUN curl -L https://github.com/Lnk2past/malen/archive/v2020.8.1.tar.gz -o malen_latest.tar.gz && \
+RUN curl -L https://github.com/Lnk2past/malen/archive/v2020.10.0.tar.gz -o malen_latest.tar.gz && \
     tar xfvz malen_latest.tar.gz && \
-    cp -R malen-2020.8.1/include/malen /usr/include && \
-    rm -rf malen_latest.tar.gz malen-2020.8.1
+    cp -R malen-2020.10.0/include/malen /usr/include && \
+    rm -rf malen_latest.tar.gz malen-2020.10.0
 
-RUN pip install git+https://github.com/Lnk2past/malen-bokeh.git@v2020.8.1 && \
+RUN pip install git+https://github.com/Lnk2past/malen-bokeh.git@v2020.10.0 && \
     cp -R /usr/local/include/python3.8/malen.bokeh/include/malen /usr/include/
 
 RUN ln -s /usr/bin/python3.8 /usr/bin/python

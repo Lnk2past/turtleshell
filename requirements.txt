@@ -5,7 +5,9 @@ jupyter
 matplotlib
 numpy
 pandas
+psycopg2
 pygithub
 pyyaml
 scipy
 seaborn
+sh
