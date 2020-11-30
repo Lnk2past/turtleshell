@@ -9,7 +9,7 @@ RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" >
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y vim curl git make cmake gcc-10 g++-10 python3.8 python3.8-dev python3-pip \
     libunwind-dev google-perftools valgrind \ 
-    libjpeg-dev zlib1g-dev libssl-dev libncurses5-dev libgdbm-dev libnss3-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev libpq-dev postgresql-12 \
+    libjpeg-dev zlib1g-dev libssl-dev libncurses5-dev libgdbm-dev libnss3-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev libpq-dev postgresql postgresql-client \
     -o APT::Immediate-Configure=0 && \
     apt-get clean -y
 
