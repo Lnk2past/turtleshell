@@ -8,7 +8,10 @@ RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" >
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y vim curl git make cmake gcc-10 g++-10 python3.8 python3.8-dev python3-pip \
-    libjpeg-dev zlib1g-dev libssl-dev libncurses5-dev libgdbm-dev libnss3-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev libpq-dev postgresql-12 
+    libunwind-dev google-perftools valgrind \ 
+    libjpeg-dev zlib1g-dev libssl-dev libncurses5-dev libgdbm-dev libnss3-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev libpq-dev postgresql-12 \
+    -o APT::Immediate-Configure=0 && \
+    apt-get clean -y
 
 COPY requirements.txt /requirements.txt
 RUN python3.8 -m pip install -r requirements.txt
@@ -30,7 +33,7 @@ RUN curl -L https://github.com/Lnk2past/malen/archive/v2020.10.0.tar.gz -o malen
     cp -R malen-2020.10.0/include/malen /usr/include && \
     rm -rf malen_latest.tar.gz malen-2020.10.0
 
-RUN pip install git+https://github.com/Lnk2past/malen-bokeh.git@v2020.10.0 && \
+RUN pip install git+https://github.com/Lnk2past/malen-bokeh.git@v2020.11.0 && \
     cp -R /usr/local/include/python3.8/malen.bokeh/include/malen /usr/include/
 
 RUN ln -s /usr/bin/python3.8 /usr/bin/python
