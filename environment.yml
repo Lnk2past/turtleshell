@@ -1,0 +1,17 @@
+name: rutgers
+dependencies:
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - bokeh
+  - matplotlib
+  - hvplot
+  - panel
+  - dask
+  - numba
+  - jupyter
+  - pygithub
+  - pip
+  - pip:
+    - contest
