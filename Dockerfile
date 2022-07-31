@@ -38,4 +38,6 @@ RUN mkdir -p /usr/include/nlohmann \
 
 COPY .vimrc /root/.vimrc
 
+RUN ln -s /usr/bin/g++-10 /usr/bin/g++
+
 WORKDIR /root/home/turtleshell
