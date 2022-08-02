@@ -36,6 +36,11 @@ RUN curl -L https://github.com/fmtlib/fmt/archive/9.0.0.tar.gz -o fmt_latest.tar
 RUN mkdir -p /usr/include/nlohmann \
     && curl -L https://github.com/nlohmann/json/releases/download/v3.10.5/json.hpp -o /usr/include/nlohmann/json.hpp
 
+RUN curl -L https://github.com/pybind/pybind11/archive/refs/tags/v2.10.0.tar.gz -o pybind11_latest.tar.gz && \
+    tar xfvz pybind11_latest.tar.gz && \
+    cp -R pybind11-2.10.0/include/pybind11 /usr/include && \
+    rm -rf pybind11_latest.tar.gz pybind11-2.10.0
+
 COPY .vimrc /root/.vimrc
 
 RUN ln -s /usr/bin/g++-10 /usr/bin/g++
