@@ -33,6 +33,11 @@ RUN curl -L https://github.com/fmtlib/fmt/archive/9.0.0.tar.gz -o fmt_latest.tar
     cp -R fmt-9.0.0/include/fmt /usr/include && \
     rm -rf fmt_latest.tar.gz fmt-9.0.0
 
+RUN curl -L https://github.com/ericniebler/range-v3/archive/refs/tags/0.12.0.tar.gz -o rangev3_latest.tar.gz && \
+    tar xfvz rangev3_latest.tar.gz && \
+    cp -R range-v3-0.12.0/include/* /usr/include && \
+    rm -rf rangev3_latest.tar.gz range-v3-0.12.0
+
 RUN mkdir -p /usr/include/nlohmann \
     && curl -L https://github.com/nlohmann/json/releases/download/v3.10.5/json.hpp -o /usr/include/nlohmann/json.hpp
 
