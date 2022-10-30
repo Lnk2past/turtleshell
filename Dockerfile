@@ -14,7 +14,7 @@ RUN apt update && apt upgrade -y \
 
 ADD .bashrc_conda /root/.bashrc_conda
 RUN  cat /root/.bashrc_conda >> ~/.bashrc
-SHELL ["/bin/bash", "-c"] 
+SHELL ["/bin/bash", "-c"]
 
 RUN curl -L https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o Miniconda3-latest-Linux-x86_64.sh \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
@@ -45,6 +45,11 @@ RUN curl -L https://github.com/pybind/pybind11/archive/refs/tags/v2.10.0.tar.gz 
     tar xfvz pybind11_latest.tar.gz && \
     cp -R pybind11-2.10.0/include/pybind11 /usr/include && \
     rm -rf pybind11_latest.tar.gz pybind11-2.10.0
+
+RUN curl -L https://github.com/pybind/pybind11_json/archive/refs/tags/0.2.13.tar.gz -o pybind11_json_latest.tar.gz && \
+    tar xfvz pybind11_json_latest.tar.gz && \
+    cp -R pybind11_json-0.2.13/include/pybind11_json /usr/include && \
+    rm -rf pybind11_json_latest.tar.gz pybind11_json-0.2.13
 
 COPY .vimrc /root/.vimrc
 
