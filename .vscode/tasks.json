@@ -10,7 +10,7 @@
             "args": [
                 "build",
                 "-t",
-                "turtleshell:latest",
+                "lnk2past/turtleshell:dev",
                 "."
             ],
             "group": {
