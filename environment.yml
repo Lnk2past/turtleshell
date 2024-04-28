@@ -1,5 +1,6 @@
 name: rutgers
 dependencies:
+  - python=3.12
   - nomkl
   - numpy
   - pandas
